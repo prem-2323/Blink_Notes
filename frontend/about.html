@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +12,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
     :root {
       --brand-bg: #6c47ff;
       --brand-text: #fff;
       --accent: #ffd500;
     }
-    /* Navbar background and text color */
-.navbar {
-  background: #6c47ff !important;
-  color: #fff !important;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 1.15rem;
-  box-shadow: 0 2px 16px rgba(108, 71, 255, 0.10);
-}
 
-/* Navbar brand (logo/title) 
+    /* Navbar background and text color */
+    .navbar {
+      background: #6c47ff !important;
+      color: #fff !important;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 16px rgba(108, 71, 255, 0.10);
+    }
+
+    /* Navbar brand (logo/title) 
 .navbar-brand {
   font-weight: 800;
   font-size: 2rem;
@@ -37,102 +40,105 @@
   letter-spacing: 0.5px;
 }
 */
-.navbar-brand .beta {
-  background: #ffd500;
-  color: #6c47ff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  padding: 2px 15px;
-  border-radius: 15px;
-  margin-left: 7px;
-}
+    .navbar-brand .beta {
+      background: #ffd500;
+      color: #6c47ff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 2px 15px;
+      border-radius: 15px;
+      margin-left: 7px;
+    }
 
-/* Navbar links */
-.navbar-nav .nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  margin-right: 10px;
-  transition: color 0.17s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-}
+    /* Navbar links */
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-right: 10px;
+      transition: color 0.17s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1rem;
+    }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: #ffd500 !important;
-  background: none !important;
-  text-decoration: underline;
-}
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #ffd500 !important;
+      background: none !important;
+      text-decoration: underline;
+    }
 
-.navbar-toggler {
-  border: none;
-  outline: none;
-}
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
 
-.navbar-toggler-icon {
-  background-color: #ffffff00;
-  border-radius: 3px;
-}
+    .navbar-toggler-icon {
+      background-color: #ffffff00;
+      border-radius: 3px;
+    }
 
-/* Navbar buttons on right */
-.d-flex .btn,
-.navbar .btn {
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 13px;
-  padding: 8px 18px;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+    /* Navbar buttons on right */
+    .d-flex .btn,
+    .navbar .btn {
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 13px;
+      padding: 8px 18px;
+      margin-left: 4px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
 
-.btn-outline-light {
-  background: none;
-  color: #fff !important;
-  border: 2px solid #fff;
-  transition: background 0.12s, color 0.12s;
-}
+    .btn-outline-light {
+      background: none;
+      color: #fff !important;
+      border: 2px solid #fff;
+      transition: background 0.12s, color 0.12s;
+    }
 
-.btn-outline-light:hover {
-  background: #ffd500;
-  color: #6c47ff !important;
-  border-color: #ffd500;
-}
+    .btn-outline-light:hover {
+      background: #ffd500;
+      color: #6c47ff !important;
+      border-color: #ffd500;
+    }
 
-.btn-primary {
-  background: #2589ff;
-  border: none;
-  color: #fff !important;
-  transition: background 0.12s;
-}
+    .btn-primary {
+      background: #2589ff;
+      border: none;
+      color: #fff !important;
+      transition: background 0.12s;
+    }
 
-.btn-primary:hover {
-  background: #ffd500;
-  color: #6c47ff !important;
-}
+    .btn-primary:hover {
+      background: #ffd500;
+      color: #6c47ff !important;
+    }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .navbar .navbar-brand {
-    font-size: 1.5rem;
-  }
-  .navbar-nav .nav-link {
-    font-size: 0.97rem;
-    margin-right: 0;
-  }
-  .d-flex .btn {
-    font-size: 0.97rem;
-    padding: 7px 10px;
-  }
-}
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .navbar .navbar-brand {
+        font-size: 1.5rem;
+      }
 
-/* Remove Bootstrap's navbar text shadow */
-.navbar-dark .navbar-brand, .navbar-dark .navbar-nav .nav-link {
-  text-shadow: none;
-}
+      .navbar-nav .nav-link {
+        font-size: 0.97rem;
+        margin-right: 0;
+      }
+
+      .d-flex .btn {
+        font-size: 0.97rem;
+        padding: 7px 10px;
+      }
+    }
+
+    /* Remove Bootstrap's navbar text shadow */
+    .navbar-dark .navbar-brand,
+    .navbar-dark .navbar-nav .nav-link {
+      text-shadow: none;
+    }
 
 
 
@@ -140,17 +146,23 @@
       background-color: #f8f9fa;
       font-family: 'Inter', Arial, sans-serif;
     }
+
     /* Navbar & Footer Styles */
-    .navbar, .footer {
+    .navbar,
+    .footer {
       background: var(--brand-bg) !important;
       color: var(--brand-text) !important;
     }
-    .navbar .navbar-brand, .footer-logo {
+
+    .navbar .navbar-brand,
+    .footer-logo {
       font-size: 2rem;
       font-weight: 800;
       color: var(--brand-text) !important;
     }
-    .navbar .beta, .footer .beta {
+
+    .navbar .beta,
+    .footer .beta {
       background: var(--accent);
       color: var(--brand-bg);
       border-radius: 20px;
@@ -159,6 +171,7 @@
       padding: 2px 10px;
       margin-left: 7px;
     }
+
     .navbar-nav .nav-link {
       color: var(--brand-text) !important;
       font-weight: 500;
@@ -168,10 +181,13 @@
       align-items: center;
       gap: 7px;
     }
-    .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:hover {
       color: var(--accent) !important;
       text-decoration: underline;
     }
+
     .navbar .btn {
       border-radius: 18px;
       font-weight: 600;
@@ -179,57 +195,75 @@
       transition: background 0.18s, color 0.18s;
       margin-left: 5px;
     }
+
     .navbar .btn-primary {
       background: var(--accent);
       color: var(--brand-bg);
       border: none;
     }
+
     .navbar .btn-outline-light {
       background: none;
       color: var(--brand-text);
       border: 2px solid var(--brand-text);
     }
+
     .navbar .btn-outline-light:hover {
       background: var(--brand-text);
       color: var(--brand-bg);
     }
+
     /* Section & Card Effects */
     .section-title {
       font-weight: bold;
       color: var(--brand-bg);
       font-size: 1.3rem;
     }
+
     .card {
       border-radius: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
       transition: transform 0.3s, box-shadow 0.3s;
       border: none;
     }
+
     .card:hover {
       transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(108,71,255,0.18);
+      box-shadow: 0 8px 32px rgba(108, 71, 255, 0.18);
     }
+
     .logo-text {
       font-size: 2rem;
       font-weight: bold;
       color: var(--brand-bg);
       animation: fadeInDown 1s ease-in-out;
     }
+
     @keyframes fadeInDown {
-      0% { transform: translateY(-20px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+      0% {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
+
     /* Footer */
     .footer {
       padding: 40px 0 20px 0;
       margin-top: 40px;
     }
+
     .footer-content {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       justify-content: space-between;
     }
+
     .footer-logo {
       font-size: 2rem;
       font-weight: 800;
@@ -237,11 +271,13 @@
       display: flex;
       align-items: center;
     }
+
     .footer-title {
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 8px;
     }
+
     .footer-links a {
       color: var(--brand-text);
       text-decoration: none;
@@ -250,66 +286,85 @@
       align-items: center;
       gap: 7px;
     }
+
     .footer-links a:hover {
       color: var(--accent);
       text-decoration: underline;
     }
+
     .footer-bottom {
       text-align: center;
       color: var(--brand-text);
       font-size: 1rem;
       margin-top: 20px;
     }
+
     .social-icons i {
       font-size: 22px;
       margin-right: 15px;
       color: var(--brand-text);
       transition: color 0.23s;
     }
+
     .social-icons i:hover {
       color: var(--accent);
     }
+
     @media (max-width: 900px) {
-      .footer-content { flex-direction: column; gap: 20px; }
-      .navbar .navbar-brand { font-size: 1.5rem; }
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .navbar .navbar-brand {
+        font-size: 1.5rem;
+      }
     }
 
-        :root {
+    :root {
       --brand-bg: #6c47ff;
       --brand-text: #fff;
       --accent: #ffd500;
     }
+
     body {
       background: #f7f7fa;
       font-family: 'Inter', Arial, sans-serif;
       color: #222;
     }
-    .navbar, .footer {
+
+    .navbar,
+    .footer {
       background: var(--brand-bg) !important;
       color: var(--brand-text) !important;
     }
+
     .feature-card {
       border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(100,110,120,0.10);
+      box-shadow: 0 2px 16px rgba(100, 110, 120, 0.10);
       transition: transform 0.2s, box-shadow 0.2s;
       border: none;
       background: #fff;
       margin-bottom: 14px;
     }
+
     .feature-card:hover {
       transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(108,71,255,0.15);
+      box-shadow: 0 8px 32px rgba(108, 71, 255, 0.15);
     }
+
     .footer {
       padding: 40px 0 20px 0;
       margin-top: 40px;
     }
+
     .footer-content {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       justify-content: space-between;
     }
+
     .footer-logo {
       font-size: 2rem;
       font-weight: 800;
@@ -317,11 +372,13 @@
       display: flex;
       align-items: center;
     }
+
     .footer-title {
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 8px;
     }
+
     .footer-links a {
       color: var(--brand-text);
       text-decoration: none;
@@ -330,57 +387,47 @@
       align-items: center;
       gap: 7px;
     }
+
     .footer-links a:hover {
       color: var(--accent);
       text-decoration: underline;
     }
+
     .footer-bottom {
       text-align: center;
       color: var(--brand-text);
       font-size: 1rem;
       margin-top: 20px;
     }
+
     .social-icons i {
       font-size: 22px;
       margin-right: 15px;
       color: var(--brand-text);
       transition: color 0.23s;
     }
+
     .social-icons i:hover {
       color: var(--accent);
     }
+
     @media (max-width: 900px) {
-      .footer-content { flex-direction: column; gap: 20px; }
-      .navbar .navbar-brand { font-size: 1.5rem; }
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .navbar .navbar-brand {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-2">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <i class="fa-solid fa-book-open-reader me-2"></i> BlinkNotes <span class="beta ms-2">Beta</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="browse.html"><i class="fa-solid fa-book"></i> Browse Notes</a></li>
-          <li class="nav-item "><a class="nav-link " href="upload.html"><i class="fa-solid fa-upload"></i> Upload Notes</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-trophy"></i> Leaderboard</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
-        </ul>
-        <div class="d-flex ms-lg-4 gap-2">
-          <a href="chat.html" class="btn btn-outline-light"><i class="fa-solid fa-robot"></i> AI Helper</a>
-          <a href="login.html" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-          <a href="signup.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <!-- NAVBAR -->
+  <div id="common-navbar"></div>
   <!-- MAIN CONTENT -->
   <div class="container py-5">
     <div class="text-center mb-4" data-aos="fade-down">
@@ -391,17 +438,17 @@
       <div class="col-lg-6 col-md-12" data-aos="fade-right">
         <div class="card p-4">
           <h5 class="section-title"><i class="fa-solid fa-thumbtack"></i> Problem</h5>
-          <p>Students often struggle to find quality study materials for specific subjects or semesters. 
-          Notes are scattered across WhatsApp groups, Google Drive links, or personal devices — making them 
-          hard to search and organize. This leads to wasted time and the use of outdated resources.</p>
+          <p>Students often struggle to find quality study materials for specific subjects or semesters.
+            Notes are scattered across WhatsApp groups, Google Drive links, or personal devices — making them
+            hard to search and organize. This leads to wasted time and the use of outdated resources.</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-12" data-aos="fade-left">
         <div class="card p-4">
           <h5 class="section-title"><i class="fa-solid fa-lightbulb"></i> Solution</h5>
-          <p>BlinkNotes is a centralized online platform where students can upload notes with subject details, 
-          tags, and descriptions. They can search & browse by subject code, semester, keywords, or tags, and 
-          preview or download instantly — ensuring easy access and collaboration.</p>
+          <p>BlinkNotes is a centralized online platform where students can upload notes with subject details,
+            tags, and descriptions. They can search & browse by subject code, semester, keywords, or tags, and
+            preview or download instantly — ensuring easy access and collaboration.</p>
         </div>
       </div>
     </div>
@@ -424,8 +471,9 @@
         <div class="card p-4">
           <h5 class="section-title"><i class="fa-solid fa-bullseye"></i> Purpose</h5>
           <p>
-            BlinkNotes is used to help students access study notes anytime, anywhere. It promotes collaboration 
-            and knowledge sharing, reduces duplication of effort, and serves as a digital library for academic resources.
+            BlinkNotes is used to help students access study notes anytime, anywhere. It promotes collaboration
+            and knowledge sharing, reduces duplication of effort, and serves as a digital library for academic
+            resources.
           </p>
         </div>
       </div>
@@ -436,15 +484,16 @@
     <div class="container">
       <div class="footer-content row">
         <div class="footer-brand col-md-4 mb-4">
-          <div class="footer-logo d-flex align-items-center"><i class="fa-solid fa-book-open-reader me-2"></i> BlinkNotes <span class="beta ms-2">Beta</span></div>
+          <div class="footer-logo d-flex align-items-center"><i class="fa-solid fa-book-open-reader me-2"></i>
+            BlinkNotes <span class="beta ms-2">Beta</span></div>
           <div class="footer-desc mt-2">
-              Empowering students worldwide through collaborative learning.<br>
-              Share knowledge, discover insights, and excel together with our AI-powered notes sharing platform.
+            Empowering students worldwide through collaborative learning.<br>
+            Share knowledge, discover insights, and excel together with our AI-powered notes sharing platform.
           </div>
           <div class="social-icons mt-3">
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-links col-md-2 mb-4">
@@ -484,11 +533,8 @@
   <script>
     AOS.init({ duration: 800, offset: 100 });
   </script>
-  <script>
-  window.env = {
-    API_URL: "https://note-d735.onrender.com" // Change to http://localhost:3000 when testing locally
-  };
-</script>
+  <script src="navbar.js"></script>
 
 </body>
+
 </html>

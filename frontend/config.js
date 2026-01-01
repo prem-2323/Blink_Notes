@@ -1,3 +1,3 @@
 window.env = {
-  API_URL: 'https://note-d735.onrender.com',
+  API_URL: 'http://localhost:3000',
 };

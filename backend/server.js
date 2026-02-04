@@ -84,10 +84,18 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 // ===== GET FILES WITH FILTERS & SORTING =====
 app.get('/files', async (req, res) => {
   try {
-    let { sort, subject, semester, tags } = req.query;
+    let { sort, subject, semester, tags, q } = req.query;
     let query = {};
 
-    if (subject) query.subjectCode = { $regex: subject, $options: 'i' };
+    if (q) {
+      query.$or = [
+        { subjectCode: { $regex: q, $options: 'i' } },
+        { subjectTitle: { $regex: q, $options: 'i' } },
+        { description: { $regex: q, $options: 'i' } }
+      ];
+    }
+
+    if (subject) query.subjectCode = subject;
     if (semester) query.semester = semester;
     if (tags) query.tags = { $in: tags.split(',').map(t => t.trim()) };
 

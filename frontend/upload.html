@@ -1,307 +1,218 @@
-<!-- Upload page with same theme, icons, and responsive layout -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Upload Subject Details</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      --brand-bg: #6c47ff;
-      --brand-text: #fff;
-      --accent: #ffd500;
-    }
-
-
-    body {
-      background: #f7f7fa;
-      font-family: 'Inter', Arial, sans-serif;
-      color: #222;
-    }
-
-    .footer {
-      background: var(--brand-bg) !important;
-      color: var(--brand-text) !important;
-    }
-
-    .feature-card {
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(100, 110, 120, 0.10);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: none;
-      background: #fff;
-      margin-bottom: 14px;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(108, 71, 255, 0.15);
-    }
-
-    .footer {
-      padding: 40px 0 20px 0;
-      margin-top: 40px;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
-
-    .footer-logo {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--brand-text);
-      display: flex;
-      align-items: center;
-    }
-
-    .footer-title {
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .footer-links a {
-      color: var(--brand-text);
-      text-decoration: none;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      color: var(--brand-text);
-      font-size: 1rem;
-      margin-top: 20px;
-    }
-
-    .social-icons i {
-      font-size: 22px;
-      margin-right: 15px;
-      color: var(--brand-text);
-      transition: color 0.23s;
-    }
-
-    .social-icons i:hover {
-      color: var(--accent);
-    }
-
-    .footer-content {
-      flex-direction: column;
-      gap: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes - BlinkNotes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="common-navbar"></div>
+    <div class="mesh-bg"></div>
+    <div class="bg-accent-blob"></div>
 
-  <!-- HERO SECTION -->
-  <section class="container py-4">
-    <div class="text-center mb-4">
-      <h1 class="display-6 fw-bold text-primary"><i class="fa-solid fa-upload"></i> Upload Your Note</h1>
-      <p class="lead">Share your knowledge with fellow students and help others succeed!</p>
-      <div class="row justify-content-center">
-        <div class="col-md-3">
-          <div class="feature-card card h-100 text-center p-3">
-            <i class="fa-solid fa-lightbulb text-warning"></i>
-            <h3>Conceptual Clarity</h3>
-            <p>Visualize and explain your subject for better understanding.</p>
-          </div>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="brand">
+            <a href="index.html"><i class="fas fa-book-open"></i> <span>BlinkNotes</span></a>
         </div>
-        <div class="col-md-3">
-          <div class="feature-card card h-100 text-center p-3">
-            <i class="fa-solid fa-user-graduate text-primary"></i>
-            <h3>Personalized Learning</h3>
-            <p>Add tags and details for easy discovery by others.</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="feature-card card h-100 text-center p-3">
-            <i class="fa-solid fa-handshake-angle text-success"></i>
-            <h3>Community Support</h3>
-            <p>Help thousands of students and get recognized.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- CTA BAR -->
-  <div class="container">
-    <div class="alert alert-warning text-center fw-bold mb-4" role="alert">
-      <i class="fa-solid fa-star"></i> 50K+ Students Helped &nbsp; | &nbsp; 4.9/5 Average Rating &nbsp; | &nbsp; 95%
-      Success Rate
-    </div>
-  </div>
-  <!-- MAIN FORM -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mb-4">
-        <div class="card p-4">
-          <h2 class="section-title text-primary mb-3"><i class="fa-solid fa-upload"></i> Upload Subject Details</h2>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="upload.html" class="active">Upload</a></li>
+            <li><a href="chat.html">AI Assistant</a></li>
+            <li><a href="login.html" class="btn btn-accent btn-sm">Sign In</a></li>
+        </ul>
+    </nav>
 
-          <form id="uploadForm" enctype="multipart/form-data">
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-id-badge"></i> Unique Name <span
-                  class="text-danger">*</span></label>
-              <input type="text" name="userID" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-code"></i> Subject Code <span
-                  class="text-danger">*</span></label>
-              <input type="text" name="subjectCode" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-heading"></i> Subject Title <span
-                  class="text-danger">*</span></label>
-              <input type="text" name="subjectTitle" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-tags"></i> Tags (comma separated)</label>
-              <input type="text" name="tags" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-graduation-cap"></i> Semester <span
-                  class="text-danger">*</span></label>
-              <input type="text" name="semester" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-align-left"></i> Description <span
-                  class="text-danger">*</span></label>
-              <textarea name="description" class="form-control" required></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold"><i class="fa-solid fa-file-pdf"></i> Upload PDF File <span
-                  class="text-danger">*</span></label>
-              <input type="file" name="file" class="form-control" accept="application/pdf" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mt-3"><i class="fa-solid fa-cloud-arrow-up"></i>
-              Submit</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card p-4 mb-3">
-          <h3 class="section-title text-success mb-2"><i class="fa-solid fa-file-lines"></i> File Requirements</h3>
-          <ul>
-            <li><strong>Supported types:</strong> PDF, Word</li>
-            <li><strong>Max size:</strong> 30 MB</li>
-            <li>Use clear diagrams</li>
-            <li>Add descriptive titles & tags</li>
-            <li>Organize content logically</li>
-            <li>Ensure text is searchable</li>
-            <li>Use readable fonts and sizes</li>
-            <li>Check for spelling & grammar</li>
-            <li>Include references if applicable</li>
-          </ul>
-        </div>
-        <div class="card p-4 mb-3">
-          <h3 class="section-title text-warning mb-2"><i class="fa-solid fa-lightbulb"></i> Success Tips</h3>
-          <ul>
-            <li>Choose relevant tags</li>
-            <li>Use descriptive titles</li>
-            <li>Keep it clear and concise</li>
-            <li>Break content into bullet points</li>
-            <li>Add real-world examples</li>
-            <li>Highlight key terms and formulas</li>
-            <li>Use high-quality images</li>
-            <li>Provide a short summary</li>
-          </ul>
-        </div>
-        <a href="b.html" class="btn btn-outline-primary w-100 mt-2"><i class="fa-solid fa-folder-open"></i> View All
-          Stored PDFs</a>
-      </div>
-    </div>
-  </div>
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content row">
-        <div class="footer-brand col-md-4 mb-4">
-          <div class="footer-logo d-flex align-items-center"><i class="fa-solid fa-book-open-reader me-2"></i>
-            BlinkNotes <span class="beta ms-2">Beta</span></div>
-          <div class="footer-desc mt-2">
-            Empowering students worldwide through collaborative learning.<br>
-            Share knowledge, discover insights, and excel together with our AI-powered notes sharing platform.
-          </div>
-          <div class="social-icons mt-3">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer-links col-md-2 mb-4">
-          <div class="footer-title"><i class="fa-solid fa-link"></i> Quick Links</div>
-          <a href="upload.html"><i class="fas fa-upload"></i> Upload Notes</a>
-          <a href="Browse.html"><i class="fas fa-book-open"></i> Browse Notes</a>
-          <a href="b.html"><i class="fas fa-trophy"></i> Leaderboard</a>
-          <a href="#"><i class="fas fa-question-circle"></i> Help & FAQ</a>
-          <a href="#"><i class="fas fa-code"></i> API Docs</a>
-          <a href="chat.html"><i class="fas fa-mobile-alt"></i> Mobile App</a>
-        </div>
-        <div class="footer-links col-md-2 mb-4">
-          <div class="footer-title"><i class="fa-solid fa-graduation-cap"></i> Popular Subjects</div>
-          <a href="#"><i class="fas fa-square-root-alt"></i> Mathematics</a>
-          <a href="#"><i class="fas fa-laptop-code"></i> Computer Science</a>
-          <a href="#"><i class="fas fa-atom"></i> Physics</a>
-          <a href="#"><i class="fas fa-flask"></i> Chemistry</a>
-          <a href="#"><i class="fas fa-leaf"></i> Biology</a>
-          <a href="#"><i class="fas fa-chart-line"></i> Economics</a>
-        </div>
-        <div class="footer-links col-md-3 mb-4">
-          <div class="footer-title"><i class="fa-solid fa-gavel"></i> Legal & Support</div>
-          <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
-          <a href="#"><i class="fas fa-user-secret"></i> Privacy Policy</a>
-          <a href="#"><i class="fas fa-balance-scale"></i> Copyright Policy</a>
-          <a href="#"><i class="fas fa-book-reader"></i> Academic Integrity</a>
-          <a href="#" class="download-chapter"><i class="fas fa-download"></i> Download Free Chapter</a>
-        </div>
-      </div>
-      <hr style="margin: 20px 0; background: var(--brand-text);" />
-      <div class="footer-bottom">&copy; 2025 BlinkNotes. All rights reserved.</div>
-    </div>
-  </footer>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="navbar.js"></script>
-  <script src="config.js"></script>
-  <script>
-    // Example: Implement your upload logic here!
-  </script>
-  <script>
-    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
+    <main class="container" style="padding: 4rem 0;">
+        <div class="grid grid-2" style="grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 3rem;">
+            <!-- UPLOAD FORM -->
+            <div class="animate-fade-in"
+                style="background: var(--bg-glass); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-xl);">
+                <h1 style="margin-bottom: 0.5rem; font-size: 2.5rem;">Share Your <span
+                        style="color: var(--accent);">Knowledge</span></h1>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Help thousands of students by sharing your
+                    study materials.</p>
 
-      try {
-        const res = await fetch(`${window.env.API_URL}/upload`, {
-          method: "POST",
-          body: formData
-        });
-        const data = await res.json();
-        alert(data.message);
-      } catch (err) {
-        alert("Upload failed: " + err.message);
-      }
-    });
-  </script>
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <label class="form-label">Note Title</label>
+                        <input type="text" id="title" class="form-control" placeholder="e.g. Organic Chemistry Basics"
+                            required>
+                    </div>
 
+                    <div class="grid grid-2" style="gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select Subject</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="physics">Physics</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="biology">Biology</option>
+                                <option value="computerscience">Computer Science</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Semester</label>
+                            <input type="number" id="semester" class="form-control" placeholder="1-8" min="1" max="8"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea id="description" class="form-control" rows="4"
+                            placeholder="Briefly describe what's inside these notes..."></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2.5rem;">
+                        <label class="form-label">Files (PDF or images)</label>
+                        <div id="dropZone"
+                            style="border: 2px dashed var(--border); padding: 3rem; border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: var(--transition); background: rgba(99, 102, 241, 0.02);">
+                            <i class="fas fa-cloud-arrow-up"
+                                style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Click or drag file to upload</h3>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Support for PDF, DOCX, and PNG/JPG
+                                (Max 20MB)</p>
+                            <input type="file" id="fileInput" style="display: none;" accept=".pdf,.doc,.docx,image/*">
+                        </div>
+                        <div id="fileInfo" style="margin-top: 1rem; display: none;">
+                            <div
+                                style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--border); border-radius: var(--radius-md);">
+                                <i class="fas fa-file-pdf" style="font-size: 1.5rem; color: var(--danger);"></i>
+                                <div style="flex: 1;">
+                                    <div id="fileName" style="font-weight: 600; font-size: 0.9rem;">filename.pdf</div>
+                                    <div id="fileSize" style="font-size: 0.8rem; color: var(--text-muted);">1.2 MB</div>
+                                </div>
+                                <i class="fas fa-times" style="cursor: pointer;" onclick="resetFile()"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                        Publish Notes <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- SIDEBAR INFO -->
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="feature-card animate-scale-in" style="padding: 2rem; animation-delay: 0.2s;">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-shield-check"
+                            style="color: var(--success); margin-right: 0.5rem;"></i> Quality Guidelines</h3>
+                    <ul style="list-style: none; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fas fa-check"
+                                style="color: var(--success); margin-right: 0.5rem;"></i> Ensure the handwriting is
+                            legible.</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fas fa-check"
+                                style="color: var(--success); margin-right: 0.5rem;"></i> Include a clear title and
+                            description.</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fas fa-check"
+                                style="color: var(--success); margin-right: 0.5rem;"></i> Use standard PDF format for
+                            best quality.</li>
+                        <li><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Respect
+                            copyright and original authors.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card"
+                    style="padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;">
+                    <h3 style="margin-bottom: 1rem; color: white;"><i class="fas fa-coins"
+                            style="margin-right: 0.5rem;"></i> Why Upload?</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">Every upload earns you
+                        "BlinkPoints" which can be used to unlock premium AI features and exclusive badges.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 700;">+50 Points/Upload</span>
+                        <i class="fas fa-bolt" style="font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+
+                <div style="text-align: center; padding: 1rem;">
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Need help? <a href="#"
+                            style="color: var(--primary); font-weight: 600;">Contact Support</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+
+        dropZone.onclick = () => fileInput.click();
+
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                showFileInfo(file);
+            }
+        };
+
+        function showFileInfo(file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+            fileInfo.style.display = 'block';
+            dropZone.style.display = 'none';
+        }
+
+        function resetFile() {
+            fileInput.value = '';
+            fileInfo.style.display = 'none';
+            dropZone.style.display = 'block';
+        }
+
+        document.getElementById('uploadForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a file first');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('subjectTitle', document.getElementById('title').value);
+            formData.append('subjectCode', document.getElementById('subject').value);
+            formData.append('semester', document.getElementById('semester').value);
+            formData.append('description', document.getElementById('description').value);
+            formData.append('userID', 'User_' + Math.floor(Math.random() * 1000)); // Dynamic user placeholder
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+
+            try {
+                const response = await fetch(`${window.env.API_URL}/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('✅ Notes uploaded successfully!');
+                    window.location.href = 'browse.html';
+                } else {
+                    alert('❌ Upload failed: ' + (data.message || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                alert('❌ Connection error. Is the backend server running?');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Publish Notes <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>';
+            }
+        };
+    </script>
 </body>
 
 </html>

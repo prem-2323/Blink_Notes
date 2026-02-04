@@ -25,8 +25,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log("✅ Connected to MongoDB Atlas"))
-.catch(err => console.error("❌ MongoDB Connection Error:", err));
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 // ===== SUBJECT SCHEMA =====
 const SubjectSchema = new mongoose.Schema({
@@ -140,4 +140,5 @@ app.get('/download/:id', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🔑 API Key Loaded: ${process.env.OPENROUTER_API_KEY ? 'YES (starts with ' + process.env.OPENROUTER_API_KEY.substring(0, 5) + '...)' : 'NO'}`);
 });

@@ -1,54 +1,45 @@
 // backend/routes/chatbot.js
 const express = require('express');
 const router = express.Router();
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-
-require('dotenv').config();
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || 'your-fallback-key-here';
 router.post('/gpt', async (req, res) => {
-  console.log("🔥 Received a request from the frontend");
+  console.log("🔥 Chat Request Received (Gemini)");
 
   const userMessage = req.body.message;
-  if (!userMessage || typeof userMessage !== 'string') {
-    return res.status(400).json({ error: "Invalid user message." });
+  if (!userMessage) {
+    return res.status(400).json({ error: "Empty message" });
   }
 
-  const payload = {
-    model: "openai/gpt-3.5-turbo",
-    messages: [
-      { role: "system", content: "You are BlinkNotes AI, a dedicated educational assistant. You must ONLY answer questions related to academic subjects, study tips, exam preparation, and learning. If a user asks about non-educational topics (e.g., movies, politics, general chit-chat unrelated to study), politely refuse and state that you can only assist with education-related queries." },
-      { role: "user", content: userMessage }
-    ]
-  };
+  const key = (process.env.GEMINI_API_KEY || "").trim();
+  if (!key || key === "YOUR_GEMINI_API_KEY_HERE") {
+    console.error("❌ GEMINI_API_KEY is missing or not set in .env");
+    return res.status(500).json({ error: "Server configuration error (Gemini API Key missing)" });
+  }
 
   try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-        "X-Title": "My Chat App"
-      },
-      body: JSON.stringify(payload)
+    console.log("📡 Calling Gemini API...");
+    const genAI = new GoogleGenerativeAI(key);
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+      systemInstruction: "You are BlinkNotes AI, a dedicated educational assistant. You must ONLY answer questions related to academic subjects, study tips, exam preparation, and learning. If a user asks about non-educational topics (e.g., movies, politics, general chit-chat unrelated to study), politely refuse and state that you can only assist with education-related queries."
     });
 
-    const data = await response.json();
-    console.log("🤖 Assistant reply:", data?.choices?.[0]?.message?.content);
+    const result = await model.generateContent(userMessage);
+    const response = await result.response;
+    const reply = response.text();
 
-    if (data.choices && data.choices[0] && data.choices[0].message) {
-      res.json({ reply: data.choices[0].message.content });
-    } else if (data.error) {
-      console.error("❌ OpenRouter API Error:", data.error);
-      res.status(500).json({ error: data.error.message });
+    if (reply) {
+      console.log("🤖 Gemini Reply Success");
+      res.json({ reply });
     } else {
-      console.error("❌ Unexpected response:", data);
-      res.status(500).json({ error: "Unexpected error from OpenRouter." });
+      console.error("❌ Empty response from Gemini");
+      res.status(500).json({ error: "Invalid AI response structure" });
     }
 
   } catch (error) {
-    console.error("❌ Network/Fetch error:", error);
-    res.status(500).json({ error: "Failed to connect to OpenRouter API." });
+    console.error("❌ Gemini Route Failure:", error.message);
+    res.status(500).json({ error: "Internal Server Error during AI call: " + error.message });
   }
 });
 
